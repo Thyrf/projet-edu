@@ -4,6 +4,3 @@ Que faire de son temps en cette période de confinement ? Rester en contact avec
 
 Ce que je vous propose avec ce site, c'est de travailler à domicile sur des petits projets en lien avec l'actualité. Ces projets pourront je l'espère vous apporter des nouvelles compétences en informatique tout en vous donnant l'envie d'aller plus loin en voyant les possibilités que ces compétences offrent.
 
----
-permalink: /index.html
----
