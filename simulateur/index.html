@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Projet1: Simulateur - J'apprends l'informatique</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Projet1: Simulateur";
+    var mkdocs_page_input_path = "simulateur.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> J'apprends l'informatique</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Projet1: Simulateur</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pre-requis">Pré-requis</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#choix-de-modelisation">Choix de modélisation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modeliser-un-individu">Modéliser un individu</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#peupler-lenvironnement">Peupler l'environnement</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modeliser-linfection">Modéliser l'infection</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modeliser-le-confinement">Modéliser le confinement</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantifier-la-propagation">Quantifier la propagation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">Contact</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">J'apprends l'informatique</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Projet1: Simulateur</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="simulateur-en-scratch">Simulateur en Scratch</h1>
+<p>Quel est l'impact de nos actions sur la propagation d'un virus. Que se passerait-il si la moitié d'entre nous respections le confinement ? Que se passerait-il si chacun faisait plus attention aux normes d'hygiène ? Il nous est facile d'estimer la tendance de ces actions, par exemple de prédire que la propagation du virus sera plus rapide si nous respectons moins les normes d'hygiène, mais il nous est beaucoup plus difficile d'aller plus loin dans cette prédiction pour aller vers du quantitatif par exemple et répondre à la question "Qu'est-ce qui se passerait si ... ?. </p>
+<p>Pour prendre les bonnes décisions et minimiser les risques pris, des outils de prédiction sont donc nécessaires. Alors comment faire ces prédicitons ? On va pouvoir utiliser la puissance de calcul des ordinateurs qui nous permettront de programmer des simulateurs. Les simulations sont utiles dans le contexte de l'étude d'une épidémie comme celle qui nous touche aujourd'hui, mais elles sont aussi utiles dans d'autres domaines tels que: </p>
+<ul>
+<li>L'éducation, par exemple pour former des pilotes d'avion,</li>
+<li>La construction de batiments, par exemple pour tester l'ergonomie d'un nouveau projet,</li>
+<li>La mécanique, pour tester par exemple l'aérodynamie de nos pièces,</li>
+</ul>
+<p>et bien d'autre: météo, astronomie, économie, robotique, sport...</p>
+<p>Dans ce projet je vous propose de découvrir les éléments fondamentaux de ces simulateurs, tout en pratiquant vos compétences informatiques. Nous verrons entre autres que la capacité d'abstraction est primordiale à la création d'un simulateur. Ce projet permet également de travailler le concept de variables privées et globales.</p>
+<h2 id="pre-requis">Pré-requis</h2>
+<p>Pour suivre cette activité, il vous sera nécessaire de connaître les bases de la programmation en scratch. Vous devrez ainsi avoir déjà programmé dans ce langage et être familié avec les concepts d'instruction, de condition, de boucle, de variable et de fonction. </p>
+<h2 id="choix-de-modelisation">Choix de modélisation</h2>
+<p>Pour commencer, nous allons devoir répondre à la question: "Que dois-je simuler ?" que nous pourrions aussi exprimer comme "Que dois-je modéliser?". Commençons simplement et donnons-nous l'objectif de tester l'impact que le confinement a sur la propagation du virus. </p>
+<div class="admonition question 1">
+<p class="admonition-title">Question</p>
+<p>Avec pour objectif de simuler l'effet du déplacement des individus sur une pandémie, quels sont les éléments/entités qui devront faire partie de ma simulation ? Prenez un moment pour réfléchir à cette question avant de passer au paragraphe suivant.</p>
+</div>
+<p>Deux éléments sont fondamentaux dans notre contexte: il faudra bien sur que notre simulateur représente des humains, et pour représenter l'effet du déplacement, il va falloir que ces humains se déplace dans un environnement. </p>
+<div class="admonition question 2">
+<p class="admonition-title">Question</p>
+<p>Quelles propriétés les humains et l'environnement devront avoir dans la simulation ? Encore une fois prenez un moment pour essayer de répondre à cette question avant de continuer.</p>
+</div>
+<p>Ici, ce qu'il est important de comprendre, c'est qu'il va falloir choisir ce qui nous semble nécessaire, de ce qui ne l'est pas. Nous est-il nécessaire par exemple de savoir si tel individu porte un Tshirt vert ou une robe jaune ? A priori non, le virus ne semble pas s'intéresser à la mode. Modéliser cette information nous demanderait de faire des efforts inutiles, nous allons donc <strong>faire abstraction</strong> de cette information. </p>
+<div class="admonition hint">
+<p class="admonition-title">Definition 1: <em>Abstraction</em></p>
+<p>L'abstraction est un processus qui permet de représenter des objets réels en objets informatiques simplifiés. Elle consiste donc à séléctionner les caractéristiques pertinentes et nécessaires des objets de celles qui ne le sont pas.</p>
+</div>
+<p>Pouvons-nous nous passer de représenter la position d'une personne dans l'environnement ? Non, cette information doit nécessairement être prise en compte pour tester l'influence du confinement et donc du déplacement de nos individus. Par ces deux exemples de question je vous espère convaincus de l'importance de l'abstraction pour réaliser un simulateur performant. </p>
+<p>Moi voilà, ça va plus loin, mon objectif à moi n'est pas de réaliser un simulateur pour influencer des décisions politiques, je laisse cette tâche aux épidémiologistes. Mon objectif à moi est de réaliser un simulateur pour enseigner l'informatique tout en ayant une introduction à ce qui peut se faire en épidémiologie. Pour cela je dois faire abstraction de plus d'information qu'un épidémiologiste le ferait. Je limiterais donc les informations modélisées à cela:</p>
+<ul>
+<li>un humain a une position, il a un état de santé (en bonne santé, infecté, guéri), il a deux comportements possible (confiné ou pas).</li>
+<li>l'environnement est un espace fini à deux dimensions (pas d'obstacles, de décors ou quoi que ce soit d'autre).</li>
+</ul>
+<p>Comme Scratch vient par défaut avec un environnement qui est un espace fini à deux dimensions, il n'y a rien a faire à ce sujet. Donc passons directement à la modélisation d'un individu dans cet environnement.</p>
+<h2 id="modeliser-un-individu">Modéliser un individu</h2>
+<p><img alt="Individu image" src="exercice1-2/Modele_rendu_1.gif" /></p>
+<div class="admonition note">
+<p><strong>Figure 1:</strong> Un individu se déplace dans un environnement 3D fini.</p>
+</div>
+<p>Comme le virus n'en a que faire de l'apparence des individus, nous non plus. Alors commençons par créer un individu que nous représentons sous forme d'une balle. Créez donc un nouveau projet, enlever le sprite par défaut, ajouter un nouveau sprite défini par un simple cercle vert et renommer le "Humain".</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Programmez l'humain pour qu'il se déplace de manière aléatoire dans l'espace pour toujours quand on clique sur le drapeau. Attention: on ne veut pas que l'humain se retrouve coincé sur les bords...</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Ajouter une variable propre à l'humain qui définit si il est confiné ou pas. Faites varier son comportement en fonction de cette variable. S'il est confiné il ne bouge pas, s'il l'est il se déplace aléatoirement. <strong>Attention : quand vous créez une nouvelle variable, vous avez le choix de la partager ou non avec les autres sprites. Plus tard, dans notre cas, nous souhaiterons avoir certains humains confinés, d'autres non. On voit donc que notre variable décrivant cette caractéristique ne doit pas être partagée !</strong></p>
+</div>
+<details class="note"><summary>Solution exercice 1 et 2</summary><p><img alt="Modelisation image" src="exercice1-2/1_DeplacementAleatoire.png" />
+La solution proposée ici n'est qu'une proposition. Comme souvent en informatique il y a bien des solutions aussi valables les unes que les autres. Je vous laisse juger la validité de la votre.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<p>Ajouter une variable à l'humain pour indiquer s'il est sain, infecté ou guéri. Ajouter une fonction pour l'infecter. Puis ajouter une variable qui permet de savoir à combien de jours de la guérison il est et une fonction qui sera appelée à chaque instant de la boucle principale pour vérifier son état de santé et le mettre à jour. Chaque fois que cette fonction est appelée, si la personne est contaminée, le nombre de jours diminue de 1. Si ce nombre arrive à 0 alors la personne est guérie. Faites varier l'apparence du sprite en fonction de son état de santé.</p>
+</div>
+<details class="note"><summary>Solution exercice 3</summary><p><img alt="Modelisation image" src="exercice3/3_etatSante.png" />
+Remarquez ici que pour faire varier l'apparence du sprite, j'ai choisi de choisir l'instruction "basculer de costume" plutôt "mettre l'effet ...". Sans pouvoir vous en dire plus, je vous conseille d'en faire autant pour faciliter le travail à venir.</p>
+</details>
+<h2 id="peupler-lenvironnement">Peupler l'environnement</h2>
+<p><img alt="Peupler image" src="exercice4/Peuple.gif" /></p>
+<div class="admonition note">
+<p><strong>Figure 2:</strong> Une multitude d'individus se déplace dans un environnement 3D fini.</p>
+</div>
+<p>Pour l'instant nous avons modélisé un individu. Notre objectif va être maintenant d'avoir un grand nombre d'individu pour modéliser notre société. Nous utiliserons pour cela l'instruction "créer un clone de moi-même" et l'évenement "quand je commence comme un clone" qui vous permettrons de faire une copie de votre individu et de ses propriétés.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
+<p>Tester ces deux nouvelles briques et utilisez-les pour peupler votre monde virtuel de 300 individus.</p>
+</div>
+<details class="note"><summary>Solution exercice 4</summary><p><img alt="Modelisation image" src="exercice4/4_peupler.png" />
+Remarquez ici que j'ai utiliser l'instruction "cacher" puis "montrer". C'est une petite astuce en Scratch pour permettre aux clones d'être créé plus rapidement.</p>
+</details>
+<h2 id="modeliser-linfection">Modéliser l'infection</h2>
+<p><img alt="Infection image" src="exercice5/infection.gif" /></p>
+<div class="admonition note">
+<p><strong>Figure 3:</strong> Une épidémie se propage dans une population.</p>
+</div>
+<p>Vous voilà presque prêts à voir faire apparaître le virus dans votre simulation. C'est ici qu'il sera primordial d'avoir créé les variables que nous avons utilisés jusqu'ici pour qu'elles soient propre au sprite (on parlera ici de <strong>variable privée</strong> en opposition avec les <strong>variables globales</strong> qui sont partagées par tous les sprites et que nous utiliserons plus tard). En effet il va falloir transmettre le virus à un individu. Seul l'état de santé de cet individu devra être affecté à ce moment. On voit donc qu'il est nécessaire que chaque individu ait sa propre caractéristique "Etat de santé".</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 5</p>
+<p>Modifier votre programme afin que le premier sprite créé soit infecté au lancement du programme. Puis modifier le programme pour que si un individu en bonne santé entre en contact avec un individu infecté, il attrape le virus. Pour cela utiliser le bloc capteur "Couleur ... touchée ?". C'est ici que vous comprendrez pourquoi nous avons préféré "basculer le costume" du sprite. En effet cela vous permet de peindre le costume correspondant au sprite infecté avec une couleur bien précise et d'utiliser cette couleur comme condition dans "Couleur ... touchée ?". </p>
+</div>
+<details class="note"><summary>Solution exercice 5</summary><p><img alt="Modelisation image" src="exercice5/5_infection.png" />
+Ici je ne présente que les groupes de blocs qui ont été modifiés.</p>
+</details>
+<h2 id="modeliser-le-confinement">Modéliser le confinement</h2>
+<p>Joli travail ! Mais voilà, pour l'instant, nous n'avons pas beaucoup de contrôle sur ce qui se passe. Et pour répondre à notre question de "Qu'est ce qui se passerait si...", il nous manque quelque chose. </p>
+<p>Si vous vous souvenez bien, quelques paragraphes plus haut, nous parlions de confinement. Nous avons même une caractéristique de chacun de nos individus qui permet de l'immobiliser si cette caractéristique de confinement est définie comme vrai (ou "oui" dans notre programme pour être exact). L'objectif est maintenant d'utiliser cette caractéristique pour répondre à notre question: "Que se passerait-il si <em>n</em>% de la population était confinée". Représentons ce <em>n</em> par une variable.</p>
+<div class="admonition question 3">
+<p class="admonition-title">Question</p>
+<p>Est-ce que <em>n</em> doit être privée ou globale (une valeur indépendante pour chaque individu ou une valeur partagée par tous) ?</p>
+</div>
+<details class="note"><summary>Réponse</summary><p>Cette variable doit être globale. Elle caractérise toute la population. Si 10% de la population est confinée, ce pourcentage est valable pour chaque individu.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Exercice 6</p>
+<p>Créer une variable globale nommée <em>PourcentageConfiné</em> et à l'aide de la fonction "nombre aléatoire entre ... et ..." changer votre programme pour que <em>PourcentageConfiné</em> % de la population reste confiné (immobile). </p>
+</div>
+<details class="note"><summary>Solution exercice 6</summary><p><img alt="Confinement image" src="exercice6/6_confiner.png" />
+Créer la fonction DéfiniConfinemenet et appelez là dans les fonction. Si vous avez un problème pour comprendre ce programme, imaginez que vous ayez un énorme dé à 100 faces. "nombre aléatoire entre 1 et 100" vous donne le résultat d'un tel dé. Maintenant imaginez que <em>PourcentageConfiné</em> est égal à 20. Je voudrais avoir 20 chances sur 100 que ma variable <em>confiné</em> soit définie comme "oui" et c'est bien cec qui se passe si je le fait pour toutes les valeurs de dé inférieures à 20.</p>
+</details>
+<p>Définissez le pourcentage à différentes valeurs et regardez la propagation du virus. Remarquez que vous pouvez choisir quelles variables sont affichées sur votre environnement en cochant ou non la boîte à gauche de vos variables dans l'onglet code&gt;Variables. Puisque seul le pourcentage est globale, seule cette variable devrait être affichée. En faisant un clic droit sur cette variable dans l'environnement vous pouvez aussi séléctionner l'option "Barre de défilement" ainsi que "change slider range" qui vous permettront d'intéragir facilement avec votre simulateur sans avoir à changer votre programme (le visuel auquel vous devriez pouvoir arriver est visible dans la solution de l'exercice précédent).</p>
+<h2 id="quantifier-la-propagation">Quantifier la propagation</h2>
+<p><img alt="Quantif image" src="exercice7/7_courbeVid.gif" /></p>
+<div class="admonition note">
+<p><strong>Figure 4:</strong> Courbe d'évolution du nombre de personnes infectées.</p>
+</div>
+<p>Peut-être pouvez-vous déjà voir les différences apportées par le confinement. Elle est flagrande si nous changeons le pourcentage de confinement de 0 à 100%. Qu'en est-il du changement lorsque l'on passe de 25 à 75% ? Ce que je vous propose est d'avoir un aperçu quantitatif de ce qui se passe dans notre simulateur. Pour cela, nous allons faire un programme qui dessine une courbe représentant le nombre de personnes infectées en fonction du temps. Mais d'abord, essayons simplement de dessiner une courbe quelconque.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 7</p>
+<p>Créer un nouveau sprite sans rien dans son costume et ajouter l'extension "stylo" au bloc de code (pour ajouter une extension, cliquer sur la petite icône tout en bas à gauche avec un petit +). Cette extension est idéale pour dessiner une courbe. En effet, quand on met le "stylo en position d'écriture", alors lorsque l'on fait bouger le sprite, il laisse une marque de stylo derrière lui. Quand on "releve le stylo" il n'écrit plus. A l'aide de ces nouvelles instructions, dessinez votre fonction trigonométrique préférée, si vous en avez une.</p>
+</div>
+<details class="note"><summary>Solution exercice 7</summary><p><img alt="Courbe1 image" src="exercice7/7_courbeCos.png" />
+Remarquez que pour dessiner en paix pendant un moment, j'ai enlevé le bloc "quand drapeau est cliqué" de mon sprite de départ. Ca me permet de voir ma courbe sans une foule qui grouille devant et de debugger mon code avec plus de clareté.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Exercice 8</p>
+<p>Maintenant que vous vous êtes familiarisés avec les blocs "stylo", utilisez les pour dessiner la courbe qui représente le nombre de personnes infectées en fonction du temps. Indice: créer un variable globale <em>NbMalade</em> qui sera mise à jour dans le programme des humains.</p>
+</div>
+<details class="note"><summary>Solution exercice 8</summary><p><img alt="Courbe2 image" src="exercice8/8_courbeInfection.png" />
+Pour résoudre ce problème, j'ai créé une variable globale <em>NbMalade</em> initialisée à zéro quand mon programme démarre et mise à jour à chaque fois qu'une personne est infectée (+1) et qu'une personne est guérie (-1). A chaque nouveau jour je peux donc déplacer mon sprite stylo en fonction de cette variable. Le "-180" ici est simplement un décalage qui me permet de dessiner le <em>0</em> en bas de l'environnement.</p>
+</details>
+<h2 id="conclusion">Conclusion</h2>
+<p>Félicitation si vous êtes arrivez jusque là vous pouvez maintenant voir la courbe qui représente le nombre de personnes malade en fonction du temps. Cette courbe ressemble normalement à une sorte de cloche. </p>
+<p>Comme vous l'imaginez peut-être, il est possible d'aller plus loin dans notre modélisation ou dans notre retour quantitatif:</p>
+<ul>
+<li>Vous pourriez afficher le nombre maximal de personne malade atteint au cours d'un simulation. Ce nombre est très important car c'est celui-ci qu'il faut comparer à la capacité maximale de traitement de notre système de santé. Ainsi il est primordial pour nos politiques de prendre des décisions qui vont applatir notre cloche et réduire ce nombre, afin que le système de santé ne soit pas saturé et que tout le monde puisse être traité dans de bonnes conditions.</li>
+<li>Vous pourriez modéliser l'impact d'un facteur tel que les normes d'hygiènes comme je l'évoquais en introduction. On pourrait par exemple représenter ces normes par une différente zone d'influence de nos individus. </li>
+<li>Enfin pour aller beaucoup plus loin je vous conseille de regarder <a href="https://www.youtube.com/watch?v=gxAaO2rsdIs">la vidéo de 3Blue1Brown</a> sur le sujet.</li>
+<li>Pour aller plus loin aussi dans la réflexion sur les chiffres que l'on lit dans la presse, je vous invite également à lire cet <a href="https://medium.com/tomas-pueyo/coronavirus-agissez-aujourdhui-2bd1dc7838f6">article de Tomas Pueyo</a> que j'ai trouvé très intéressant.</li>
+</ul>
+<p>Enfin merci à Mitch Resnick pour avoir déjà fait une partie du travail en programmant un <a href="https://scratch.mit.edu/projects/376656449/">simulateur en Scratch</a> sur lequel je me suis fortement inspiré.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="Contact">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
