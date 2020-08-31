@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Introduction à python - J'apprends l'informatique</title>
+  <title>introPython trinket - J'apprends l'informatique</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction \u00e0 python";
-    var mkdocs_page_input_path = "introPython.md";
+    var mkdocs_page_name = "introPython trinket";
+    var mkdocs_page_input_path = "introPython_trinket.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -60,26 +60,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Python</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction à python</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commentaires-et-instructions-simples">Commentaires et instructions simples</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#variables-et-operations-standard">Variables et opérations standard</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#boucles">Boucles</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#fonctions">Fonctions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#conditions">Conditions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#listes">Listes</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aller-plus-loin">Aller plus loin</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introPython/">Introduction à python</a>
                     </li>
                 </ul>
                 <ul>
@@ -106,12 +88,8 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Python &raquo;</li>
-        
-      
     
-    <li>Introduction à python</li>
+    <li>introPython trinket</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -126,9 +104,13 @@
 <p>Pour pouvoir communiquer avec les machines, il faut être en mesure de communiquer avec elles. Pour cela une multitudes de langages existent. Cette page vous propose de découvrir le langage Python très en vogue dans le milieu de l'éducation tout autant que dans le milieu de la recherche pour résoudre des problèmes aussi pointus que ceux d'apprentissage autonome.</p>
 <p>Au travers des exercices suivant vous découvrirez des éléments essentiels de tout langage informatique que sont: l'utilisation de variables, de boucles, de conditions et de fonctions. </p>
 <h2 id="commentaires-et-instructions-simples">Commentaires et instructions simples</h2>
-<p>Pour chaque section de cette page, j'utiliserai un code intégré qui vous permettra d'exécuter des scripts python sans quitter cette page, et d'interagir avec le code comme vous le souhaitez. Alors allons-y : lisez le code, essayez de prévoir ce qui va se passer dans le terminal (en noir), et appuyez sur le bouton d'exécution.</p>
-<p>Si le programme en python n'apparait pas et que le chargement semble bloqué, essayez de cliquer en haut à gauche sur <em>open in repl.it</em> pour l'ouvrir dans un autre onglet.</p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool1Hello?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origine allow-scripts allow-modals"></iframe>
+<p>Pour chaque section de cette page, je partagerais un code qu'il vous faudra recopier dans un interpreteur python. Vous pouvez par exemple utiliser trinket que j'ai integré sur <a href="../trinket_embedded/"><strong>cette page</strong></a>. Alors allons-y : lisez le code, essayez de prévoir ce qui va se passer à son execution et testez le sur l'interpreteur. </p>
+<pre><code class="py">    # First, lines beginning with a Hashtag are comments. Those are very practical to make python code understandable and share it. That will be very useful for me now as you can imagine.
+
+    # So what can we do in python ? Like in other languages, we can give instructions. Let's start with the standard:
+    print(&quot;Hello world&quot;)
+
+</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
@@ -136,7 +118,60 @@
 </div>
 <h2 id="variables-et-operations-standard">Variables et opérations standard</h2>
 <p>Les ordinateurs ne font pas que répéter les mêmes choses encore et encore. Ils nous sont utiles car ils peuvent s'adapter à différentes situation. Comment cela marche ? Grâce à des données qui sont collectées et fournies à l'ordinateur. Dans ons programmes, nous appelerons ces données des variables. Une variable est comme une boîte dans laquelle nous mettons des informations auquel notre programme peut accéder autant que nécessaire et changer le contenu.</p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool2Variables?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origine allow-scripts allow-modals"></iframe>
+<pre><code class="py"># A variable has a name. Lets call it x like you probably often do in mathematics. To give x a value, it's simple, just make it equal to something:
+
+print(&quot;Assignement&quot;)
+x = 0
+
+# Now let's check what's inside x with the print function that we used in the previous section:
+
+print(&quot;x =&quot;)
+print(x)
+
+# actually let's make this a bit more tidy and enjoy the capability of print to take several arguments
+
+print(&quot;x = &quot;,x)
+
+# There exist different types of variables. During the summerschool we'll use mostly integers (numbers), floats(decimal numbers), strings (text), booleans (True of False) and lists (lists...)
+
+print(&quot;\nTypes&quot;)# \n = end of line
+myInt = 2020
+myFloat = 3.14
+myString = &quot;Hello world&quot;
+myBoolean = True
+myList = [&quot;Kate&quot;,&quot;Joe&quot;, &quot;Ben&quot;, &quot;Shanka&quot;]
+
+print(myInt)
+print(myFloat)
+print(myString)
+print(myBoolean)
+print(myList)
+
+# Each type comes with it's operations. As you could expect if I add two numbers and if I add two strings, the process will be very different. Let's try it out:
+
+print(&quot;\nOperations&quot;)
+print(myInt + 1)
+print(myFloat / 2)
+print(myString + &quot; !!!&quot;)
+print(not(myBoolean))
+print(myList[3])
+
+# Note that you can use the value stored in a variable to assign another variable. And then you can end up with things a bit strange at first but super useful such as this:
+
+print(&quot;\nOperations2&quot;)
+print(x)
+x = x + 1
+print(x)
+
+# One last thing. Can we add strings and integers ? What do you think ?
+
+print(&quot;\nOperations3&quot;)
+myString = &quot;Year:&quot; + 2000
+print(&quot;myString&quot;)
+
+# This does not work and that is great ! Indeed adding a string and an integer is ambiguou. What do we want out of that is unclear. Do we want 2000 to be converted to a string and concatenated to &quot;Year&quot;, or do we want &quot;Year&quot; to be converted in ascii and added to 2000. The computer is not supposed to know and does not take the decision for us which is great. Instead he gives an error where it explains us why he has a problem with what we wrote. Pay attention to those errors and try to understand them, that's the best way to become independant and open yourself the world of computer science (and a big part of robotics).
+
+</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
@@ -144,7 +179,41 @@
 </div>
 <h2 id="boucles">Boucles</h2>
 <p>Une autre façon dont les ordinateurs et les robots changent notre vie est dans leur capacité à faire face à des tâches répétitives sans s'ennuyer. Mais le programmeur qui les a programmés s'ennuie facilement, il doit donc disposer d'un outil pour s'occuper des répétitions dans son code. C'est à cela que servent les boucles.</p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool3Loops?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origine allow-scripts allow-modals"></iframe>
+<pre><code class="py"># Imagine I want to increment a variable x from 0 to 5 and show its value changing. I could write:
+print(&quot;No loop&quot;)
+x = 0
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
+
+# But that is highly unreadable and unpractical. Therefore python and most other programming languages use loops. In python we'll use the for loop:
+
+print(&quot;\nFor loop&quot;)
+x = 0
+for i in range(5):
+  x = x + 1
+  print(&quot;x = &quot;, x)
+
+# Note that the two previous bits of code give the same output. At first it can be fine to understand &quot;for i in range(5):...&quot; as &quot;repeat 5 times...&quot;, although it means a bit more than that.
+
+# Another thing to notice here is the use of indentations in python: the lines 20 and 21 start with a tabulation. This means that the two form a block, and this whole block will be repeated by the for loop in line 19.
+
+# Repetitions can also be handled by while loops. Which leads us to a third way to do the same thing: 
+print(&quot;\nWhile loop&quot;)
+x = 0
+while x &lt; 5:
+  x = x + 1
+  print(&quot;x = &quot;, x)
+
+
+</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Exercice 3</p>
@@ -154,7 +223,40 @@
 <p>Connaissez-vous le langage appelé Assembleur ? Prenez quelques secondes pour le regarder sur wikipedia et essayez de déchiffrer ce que fait le programme dans l'image en haut à droite... Ce n'est pas le langage dans lequel vous voulez programmer tous les jours ! Prenez le temps de réfléchir à la chance que vous avez de ne pas avoir à en passer par là et d'utiliser plutôt python.</p>
 <p>Cette chance, vous l'avez en partie grâce aux fonctions. Comme en mathématiques, les fonctions peuvent prendre des arguments et retourner une valeur. Vous devriez tous avoir déjà utilisé la fonction cosinus. Le cosinus prend un paramètre, un angle, et renvoie une valeur comprise entre -1 et 1. En informatique, les fonctions se présentent sous de nombreuses formes. Elles peuvent prendre un ou plusieurs arguments ou aucun. Elles peuvent renvoyer des valeurs, mais elles ne sont pas obligées de le faire (dans ce cas, on pourrait appeler cela une procédure). </p>
 <p>Un tel outil permet de rendre notre code lisible, moins répétitif, et de combiner et construire des fonctions les unes avec et sur les autres. C'est ainsi que, grâce à certains programmeurs, votre ordinateur peut comprendre un langage de haut niveau comme python, alors qu'à la base il ne peut comprendre que l'assemblage. Voyons comment utiliser cet outil incroyable sur python. </p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool4functions?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origine allow-scripts allow-modals"></iframe>
+<pre><code class="py"># Here are a few examples of function declarations (definition)
+# printHelloWorld: no arguments, no output
+def printHelloWorld():
+  print(&quot;Hello world&quot;)
+
+# div: input = 2 integers; output = 1 float
+def div(a,b):
+  return a/b
+
+# splitStringAtComma: input = 1 string; output = list of strigns
+def splitStringAtComma(s):
+  return s.split(&quot;,&quot;)
+
+# fibonacci: input = 1 integer; output = 1 integer
+def fibonacci(n):
+  x_nm1 = 0
+  x_nm2 = 1
+  for i in range(n):
+    x_n = x_nm1 + x_nm2
+    x_nm2 = x_nm1
+    x_nm1 = x_n
+  return x_nm1
+
+# those were only the definitions of the functions. Now that they are defined we can use them as such:
+printHelloWorld()
+f = div(1,4)
+l = splitStringAtComma(&quot;str1,str2&quot;)
+r = fibonacci(10)
+
+print(f)
+print(l)
+print(r)
+
+</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Exercice 4</p>
@@ -166,7 +268,40 @@
 <p class="admonition-title">Exercice 5</p>
 <p>Modifiez le code en suivant les instructions qu'il contient.</p>
 </div>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool5conditions?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origine allow-scripts allow-modals"></iframe>
+<pre><code class="py"># fibonacci: input = 1 integer; output = 1 integer
+def fibonacci(n):
+  x_nm1 = 0
+  x_nm2 = 1
+  for i in range(n):
+    x_n = x_nm1 + x_nm2
+    x_nm2 = x_nm1
+    x_nm1 = x_n
+  return x_nm1
+
+# I'll take this opportunity to show you one more little instruction: input. When you use input, the user is asked to type something in the terminal which is returned to the program,  allowing to make the code interactive.
+
+while True:
+  s = input('Which Fibonacci number do you want? ')
+  # as input returns a string and we want a number
+  # we convert it to integer
+  n = int(s)
+  # print the result
+  print(&quot;Fibonacci(&quot;,n,&quot;) = &quot;,fibonacci(n),&quot;\n&quot;)
+
+# Try it out and try to understand what is going on. One problem you will find (especially if you try to make things crash as I asked you to do) is that if someone types something like &quot;non a number&quot; as an input, the code will crash. Indeed the function int() does not accept to convert non digits. 
+# To prevent this we can use a condition and check if our string is made of digits such as:
+
+if s.isdigit():# s.isdigit() returns either True or False
+  print(&quot;s is a positive number&quot;)
+  # dosomethingmore
+else:
+  print(&quot;s is not a positive nunmber&quot;)
+  # dosomethingmore
+
+# (Note that this piece of code will never be executed because it comes after a while True loop)
+# Try to add such a condition inside the while loop to remind the user to put numbers if he's not doing so.
+
+</code></pre>
 
 <h2 id="listes">Listes</h2>
 <p>Quand vous vous préparez pour aller faire des courses (ou que vos parents le font), que faites-vous ? Vous prenez autant de bout de papier que vous avez d'achats à faire, ou bien vous prenez un seul bout de papier sur lequel vous notez tout ? J'espère que vous utilisez la deuxième option, pour vos poches et la planète. En programmation c'est pareil. Si on a une liste d'éléments à retenir sur lesquels nous devons faire les mêmes types d'opération, souvent on n'utilisera pas plusieurs variables mais seulement une seule liste.  </p>
@@ -174,7 +309,17 @@
 <p class="admonition-title">Exercice 6</p>
 <p>Dans l'exercice précédent nous avons utilisé la fonction <em>int()</em> pour convertir une chaine de caractère en entier. Pour découvrir l'utilisation des listes, reprogrammez la fonction <em>int()</em> que nous appelerons <em>str_to_int(s)</em>. Utilisez pour cela la chaine de caractère fournine en argument comme une liste de caractères. Accéder pour cela à chacun des caractères à l'aide des crochets ([]). Vous pourrez également utiliser la fonction <em>ord()</em> qui retourne le nombre entier correspondant à l'Unicode d'un caractère.</p>
 </div>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool6lists?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origine allow-scripts allow-modals"></iframe>
+<pre><code class="py">def str_to_int(s):
+  # test crochets
+  print(s[0])
+  ...
+
+while True:
+  s = input('Type a number. I''ll square it for you : ')
+  n = str_to_int(s)
+  print(&quot;The square of this number is :&quot;+str(n*n))
+
+</code></pre>
 
 <h2 id="aller-plus-loin">Aller plus loin</h2>
 <div class="admonition note">
@@ -187,15 +332,6 @@
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../about/" class="btn btn-neutral float-right" title="Contact">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../simulateur/" class="btn btn-neutral" title="Simulateur"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -219,10 +355,6 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../simulateur/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
