@@ -333,8 +333,10 @@ else:
 <p>Dans l'exercice précédent nous avons utilisé la fonction <em>int()</em> pour convertir une chaine de caractère en entier. Pour découvrir l'utilisation des listes, reprogrammez la fonction <em>int()</em> que nous appelerons <em>str_to_int(s)</em>. Utilisez pour cela la chaine de caractère fournine en argument comme une liste de caractères. Accéder pour cela à chacun des caractères à l'aide des crochets ([]). Vous pourrez également utiliser la fonction <em>ord()</em> qui retourne le nombre entier correspondant à l'Unicode d'un caractère.</p>
 </div>
 <pre><code class="py">def str_to_int(s):
-  # test crochets
-  print(s[0])
+  # fonction to be defined
+  # here is an exemple that shows you how to access the elements of a string as a list of characters
+  for i in range(len(s)):
+    print(s[i])
   ...
 
 while True:
