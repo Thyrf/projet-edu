@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Aller plus loin avec le tri - J'apprends l'informatique</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Aller plus loin avec le tri";
+    var mkdocs_page_input_path = "FurtherWithSort.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> J'apprends l'informatique</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Scratch</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introScratch/">Casse Briques</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../simulateur/">Simulateur</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Python</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../introPythonOff/">Introduction à python</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Aller plus loin avec le tri</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#le-tri-a-bulles">Le tri à bulles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#break-et-continue">Break et continue</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copies-de-variables">Copies de variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#librairies">Librairies</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">Contact</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">J'apprends l'informatique</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+    
+    <li>Aller plus loin avec le tri</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="aller-plus-loin-avec-le-tri">Aller plus loin avec le tri</h1>
+<p>Dans ce chapitre nous allons découvrir certaines spécificités du langage python dans le contexte du tri de données. Pour réaliser la totalité des exercices de ce chapitre vous devrez avoir python3 d'installé sur votre machine.</p>
+<h2 id="le-tri-a-bulles">Le tri à bulles</h2>
+<p>L'un des algorithmes de tri le plus simple est le tri à bulles. Voici un programme en python qui montre son fonctionnement.  </p>
+<pre><code class="py">list_a_trier = [5,9,11,3,2,7,3,87,51,25,9,0]
+
+print(&quot;avant tri&quot;)
+print(list_a_trier)
+
+b_permut = True
+
+while b_permut == True:
+  b_permut = False
+
+  for index in range(0,len(list_a_trier)-1):
+    # check if in order
+    if list_a_trier[index]&gt;list_a_trier[index+1]:
+      buff = list_a_trier[index]
+      list_a_trier[index] = list_a_trier[index+1]
+      list_a_trier[index+1] = buff
+      b_permut = True
+
+print(&quot;après tri&quot;)
+print(list_a_trier)
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Lire le programme du tri à bulles, comprendre son fonctionement et le tester.</p>
+</div>
+<h2 id="break-et-continue">Break et continue</h2>
+<p>Les déclarations <em>break</em> et <em>continue</em> permettent d'alterer le fonctionnement normal des boucles que vous avez découvert dans le chapitre précédent. Les boucles, comme nous l'avons vu, permettent de répéter un bloc d'instructions tant qu'un test défini avec la boucle est vérifié. Cependant il est parfois souhaité d'interférer avec ce fonctionnement depuis l'intérieur de la boucle, pour passer directement au bloc suivant (l'itération suivante), ou pour tout simplement arrêter la boucle. C'est exactement ce à quoi servent respectivement les déclarations <em>continue</em> et <em>break</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Tester le programme suivant et à travers ce que vous avez appris dans cette section, modifier le programme du tri à bulles afin qu'il marche après avoir remplacé la boucle principale par une boucle <em>while True:</em></p>
+</div>
+<pre><code class="py">for i in range(10):
+  if i == 5:
+    continue
+  print(i)
+
+i = 0
+while i &lt; 10:
+  print(i)
+  if i == 5:
+    break
+</code></pre>
+
+<h2 id="copies-de-variables">Copies de variables</h2>
+<p>L'avantage de la simplicité du langage de python a un certain coût. Lisez le programme suivant, prédisez le résultat et testez votre prédiction en l'exécutant.</p>
+<pre><code class="py">a = 0
+b = a
+a = 1
+print(b)
+
+liste = [1,2,3]
+liste2 = liste
+liste[0] = 0
+print(liste2)
+liste = []
+print(liste2)
+</code></pre>
+
+<p>Ce résultat est souvent surprenant pour ceux qui découvrent python. On pourrait s'attendre à ce que le premier <em>print(liste2)</em> nous indique <em>[1,2,3]</em> puisque nous n'avons pas demandé de changer <em>liste2</em> et que c'est une copie de <em>liste</em>. Mais ce n'est pas le cas. Les valeurs de <em>liste</em> ne sont pas copiées dans une nouvelle liste nommée <em>liste2</em>.  <em>liste2</em> est tout simplement défini pour pointé vers le même emplacement mémoire que <em>liste</em>.</p>
+<p>La différence est donc que lorsque l'instruction <em>a = 1</em> est exéctuée, <em>a</em> est défini pour pointer vers un nouvel espace mémoire, alors que lorsque l'instruction <em>liste[0] = 0</em> est exéctuée c'est bien la valeur dans l'espace mémoire pointé par <em>liste[0]</em> qui est changé.</p>
+<p>Cette particularité a de grandes implications concernant l'utilisation des fonctions. En effet, comme le montre le petit programme suivant, une variable donnée comme argument pourra être modifiée par cette fonction si cette variable est une liste, sinon ça ne sera pas le cas.</p>
+<pre><code class="py">def change_non_list_arg(n):
+  n = 0
+
+v = 1
+change_non_list_arg(v)
+print(v)
+
+def change_list_arg(liste):
+  liste[0] = 0
+
+l = [1]
+change_list_arg(l)
+print(l)
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<ul>
+<li>3.1.  Tout en sachant qu'une fonction peut modifier les listes qui lui sont données en argument, factoriser le programme du tri à bulles en définissant une procédure <em>permute(liste, index)</em> qui intervertit les éléments <em>index</em> et <em>index + 1</em> de <em>liste</em>. </li>
+<li>3.2.  Continuner de factoriser le programme en définissant une procédure <em>bulles(liste)</em></li>
+</ul>
+</div>
+<h2 id="modules">Modules</h2>
+<p>Tout comme on utilise des intercalaires dans unn classeur pour séparer différents types de documents, lorsque l'on travaille sur des programmes complexes il est important pour s'y retrouver de découper de tels programmes en plusieurs morceaux. Les modules sont l'équivalents des intercalaires en python.</p>
+<p>Un module est un fichier python qui contient des définitions et des déclarations. Vous apprendrez ici comment créer et utiliser un module python. D'abord créer un ficher <em>exemple.py</em> contenant les lignes suivantes:</p>
+<pre><code class="py"># Exemple de module python
+
+def multiplier(a, b):
+  return a * b
+</code></pre>
+
+<p>Voici notre module exemple crée, qui nous donne accès à la fonction multiplier. Pour utiliser ce module dans un autre programme, il faudra d'abord l'importer à l'aide de l'instruction <em>import exemple</em>. Il sera alors possible d'utiliser la fonction <em>multiplier</em>, à condition de spécifier où elle se trouve en écrivant par exemple <em>exemple.multiplier(3,5)</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
+<p>Créer un module <em>ModuleTri</em> qui contient les fonctions <em>permute()</em> et <em>bulles()</em> et adapter votre programme principal pour qu'il l'utilise. Sans compter les <em>print</em>, il ne devrait rester que 3 lignes dans ce programme (import, initialisation de liste, tri).</p>
+</div>
+<h2 id="librairies">Librairies</h2>
+<p>Tout comme on trouve les intercalaires dans des classeurs regroupants différents type d'information, on va souvent trouver des modules dans des paquets (packages en anglais). Alors que la création de paquets ne vous sera surrement pas utile dans le futur proche, leur utilisation sera nécessaire. La disponibilité de paquets pour faire tout et n'importe quoi fait une des forces de python. </p>
+<p>Dans cette section nous utiliserons le paquet <em>matplotlib</em> qui permet de visualiser des données sous différentes formes. De <em>matplotlib</em> nous utiliserons le module <em>pyplot</em> qui permet de réaliser ces visualisations de façon similaire à <em>MATlAB</em>. Pour importer ce module, il suffira alors (après avoir installé le paquet avec pip bien sûr) d'exécuter l'instruction <em>import matplotlib.pyplot</em>. Voici un exemple de programme pour dessiner un fonction quadratique:</p>
+<pre><code class="py">import matplotlib.pyplot
+
+list_x = range(10)
+list_y = []
+for x in list_x:
+  list_y.append(x*x)
+
+matplotlib.pyplot.plot(list_x, list_y)
+matplotlib.pyplot.show()
+</code></pre>
+
+<p>Comme les accès aux modules peuvent être nombreux, pour faciliter la lecture de notre programme il est possible d'utiliser l'instruction <em>import matplotlib.pyplot as plt</em> (<em>plt</em> ou ce que l'on désire) pour accéder directement à toutes les fonctions du module à l'aide du nom choisi. Le programme deviendra alors:</p>
+<pre><code class="py">import matplotlib.pyplot as plt
+
+list_x = range(10)
+list_y = []
+for x in list_x:
+  list_y.append(x*x)
+
+plt.plot(list_x, list_y)
+plt.show()
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Exercice 5</p>
+<ul>
+<li>Modifiez <a href="../python/TestPerformance.py">ce programme</a> afin que la fonction <em>quickSort</em> soit intégrée au module <em>ModuleTri</em>.</li>
+<li>Utiliser la fonction <em>time.perf_counter()</em> du module <em>time</em> pour visualiser combien de temps il faut pour trier un liste en fonction de sa taille comme le montre la figure suivante.</li>
+<li>La courbe que vous obtenez est probablement différente à celle qui suit. C'est normal: la liste a été triée au hasard. Pour faire une estimation de performance qui dépend moins du hasard, pour chaque taille de liste, faire <em>n = 10</em> tri avec des listes différentes et calculer le temps moyen qu'il faut pour effectuer le tri en fonction de la taille d'une liste.</li>
+</ul>
+</div>
+<p><img alt="PerformanceTest" src="../python/QuickSortPerf.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="Contact">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../introPythonOff/" class="btn btn-neutral" title="Introduction à python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../introPythonOff/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
