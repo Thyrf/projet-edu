@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Conditions - Programmer en python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Conditions";
+    var mkdocs_page_input_path = "intro/6_conditions.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programmer en python</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Découverte</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../1_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../2_instructions/">Instructions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../3_variables/">Variables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../4_boucles/">Boucles</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../5_fonctions/">Fonctions</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Conditions</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../7_listes/">Listes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../8_conclusion/">Conclusion</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Les algorithmes de tri</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/1_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/2_break/">Break & Continue</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/3_variables/">Variables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/4_modules/">Modules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/5_librairies/">Librairies</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programmer en python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Découverte &raquo;</li>
+        
+      
+    
+    <li>Conditions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="conditions">Conditions</h2>
+<p>Dans nos programmes, en fonction de certaines variables, parfois nous voulons faire des choses, parfois nous ne le faisons pas. Pour cela, le dernier ingrédient qui nous manque dans notre arsenal d'outils est la condition. Les conditions sont assez simples et nous les utilisons tous les jours : Est-ce qu'il pleut ? Oui/Non =&gt; Prenez un parapluie/ne le prenez pas. Notez qu'en informatique, les conditions sont composées de : un test aboutissant à un booléen (Vrai ou Faux), ce qu'il faut faire si le test est Vrai, et parfois ce qu'il faut faire s'il ne l'est pas.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 5</p>
+<p>Modifiez le code en suivant les instructions qu'il contient.</p>
+</div>
+<pre><code class="language-py"># fibonacci: input = 1 integer; output = 1 integer
+def fibonacci(n):
+  x_nm1 = 0
+  x_nm2 = 1
+  for i in range(n):
+    x_n = x_nm1 + x_nm2
+    x_nm2 = x_nm1
+    x_nm1 = x_n
+  return x_nm1
+
+# I'll take this opportunity to show you one more little instruction: input. When you use input, the user is asked to type something in the terminal which is returned to the program,  allowing to make the code interactive.
+
+while True:
+  s = input('Which Fibonacci number do you want? ')
+  # as input returns a string and we want a number
+  # we convert it to integer
+  n = int(s)
+  # print the result
+  print(&quot;Fibonacci(&quot;,n,&quot;) = &quot;,fibonacci(n),&quot;\n&quot;)
+
+# Try it out and try to understand what is going on. One problem you will find (especially if you try to make things crash as I asked you to do) is that if someone types something like &quot;non a number&quot; as an input, the code will crash. Indeed the function int() does not accept to convert non digits. 
+# To prevent this we can use a condition and check if our string is made of digits such as:
+
+if s.isdigit():# s.isdigit() returns either True or False
+  print(&quot;s is a positive number&quot;)
+  # dosomethingmore
+else:
+  print(&quot;s is not a positive nunmber&quot;)
+  # dosomethingmore
+
+# (Note that this piece of code will never be executed because it comes after a while True loop)
+# Try to add such a condition inside the while loop to remind the user to put numbers if he's not doing so.
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../7_listes/" class="btn btn-neutral float-right" title="Listes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../5_fonctions/" class="btn btn-neutral" title="Fonctions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../5_fonctions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../7_listes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

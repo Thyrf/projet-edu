@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Robot tournesol - Apprentissage autonome</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Robot tournesol";
+    var mkdocs_page_input_path = "GD/2_robot.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Apprentissage autonome</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Apprentissage numérique</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../1_intro/">Introduciton</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Robot tournesol</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#controle-des-actionneurs">Contrôle des actionneurs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mesure-de-la-lumiere">Mesure de la lumière</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../3_grille/">Recherche en grille</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../4_gradient/">Descente de gradient</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../5_lien/">Liens</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Apprentissage autonome</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Apprentissage numérique &raquo;</li>
+        
+      
+    
+    <li>Robot tournesol</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="presentation-du-systeme-robotique-et-du-probleme-a-resoudre">Présentation du système robotique et du problème à résoudre</h1>
+<table>
+<thead>
+<tr>
+<th align="center">Robot tournesol</th>
+<th align="center">Les capteurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="../intro/tournesol.jpeg" /></td>
+<td align="center"><img alt="" src="../intro/capteurs.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure 3:</strong> Le robot tournesol et ses capteurs.</p>
+</div>
+<p>Pour attirer le plus d'insectes pollinisateur, le tournesol se tourne constament vers le soleil pour absorber le plus possible de chaleur. Alors que la volonté de se tourner vers des énérgies renouvellables grandit, on pourrait souhaiter que nos panneaux solaires aussi suivent le soleil pour créer le maximum possible d'éléctricité. Dans cette séquence nous découvrirons comment il est possible de mettre en place un système qui se dirige automatiquement vers le soleil, comme le tournesol.</p>
+<p>Le robot tournesol est constitué de 2 moteurs qui lui permettent de tourner sa "tête" horizontalement et verticalement. Pour savoir où tourner la tête, il doit percevoir d'où vient la lumière. Pour cela il est equipé de 4 capteurs de lumière. Les instructions pour construire le robot tournesol sont accessibles sur <a href="https://www.instructables.com/Microbit-Solar-Tracker/"><strong>Instructable</strong></a>.</p>
+<p>Le microcontrôleur utilisé pour faire l'interface entre ses capteurs et ses actionneurs est le micro:bit. Pour le programmer nous utiliserons ici makecode, mais il est possible de programmer le robot et suivre la même progression avec le langage python. </p>
+<p>Si vous n'avez pas la possibilité de construire le robot, vous pouvez aussi le tester à distance <a href="http://51.154.154.254:8000/"><strong>sur ce site</strong></a>.</p>
+<h2 id="controle-des-actionneurs">Contrôle des actionneurs</h2>
+<p>Pour diriger la tête du robot, deux moteurs sont à disposition. Ces moteurs sont des servo-moteurs qui sont souvent utilisés dans le modélisme. Ces moteurs sont très simples à contrôler. Par exemple, le moteur horizontal est branché sur le <em>pin13</em> du micro:bit. On pourra alors définir l'angle horizontal vers lequel le robot regarde grâce à l'instruction servo_write(pin13, angle) avec angle étant un nombre entier allant de 0 à 180. Vous trouverez plus d'information sur les servo moteurs sur <a href="https://learn.adafruit.com/adafruit-motor-selection-guide/continuous-rotation-servos">ce site</a>.</p>
+<p>Le moteur vertical est branché sur le <em>pin14</em> du micro.bit. On pourra le contrôler de la même façon. Ainsi pour positionner la tête du robot selon ses deux angles on éxecuter un programme comme celui qui suit.</p>
+<p><img alt="" src="../intro/ControlMoteurs.png" /></p>
+<div class="admonition note">
+<p><strong>Figure 4:</strong> Un programme qui permet de positionner la tête du robot au milieu de son domaine de mouvement.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Tester ce programme et modifiez le pour que le robot se positionne succéssivement aux quatres coins de son domaine de mouvement, comme s'il s'échauffait le cou.</p>
+</div>
+<h2 id="mesure-de-la-lumiere">Mesure de la lumière</h2>
+<p>Pour mesurer la lumière, le robot est équipé de 4 capteurs qui sont des photo-résistances. Chaque capteur est branché sur une entrée analogique du micro:bit qui permet de mesurer une valeur allant de 0 à 1024 grâce à l'instruction analog_read(pin_number). 0 correspond à une grande quantité de lumière et 1024 à une faible luminosité. Les capteurs sont branchés sur les pin 0, 1, 2 et 3 et correspondent respectivement au capteur du bas à droite, du bas à gauche, du haut à droite et du haut à gauche (gauche et droite du robot, pas de l'observateur en face). Le programme suivant donne un exemple de programme permettant d'afficher la lumière perçue par un capteur sur le panneau de LEDs.</p>
+<p><img alt="" src="../intro/AccesCapteurs.png" /></p>
+<div class="admonition note">
+<p><strong>Figure 5:</strong> Un programme qui permet mesurer la quantité de lumière perçue par le capteur en bas à droite de la tête.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<ul>
+<li>Tester le programme précédent.</li>
+<li>Définir une variable <em>LumiereMoyenne</em> ainsi qu'une fonction <em>MesureLumiereMoyenne</em> qui calcule la moyenne des capteurs du bas de la tête et qui la stocke dans <em>LumiereMoyenne</em>. Afficher cette valeur grâce à l'instruction <em>plot_bar_graph</em>.</li>
+<li>Faire de même en faisant cette fois-ci la moyenne sur les 4 capteurs. On ne pourra par contre plus utiliser l'affichage à partir de cet exercice. En effet l'utilisation du <em>pin3</em> pour mesurer la lumière nécessite la désactivation du panneau de LEDs (<a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">plus d'explications ici</a>).</li>
+</ul>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../3_grille/" class="btn btn-neutral float-right" title="Recherche en grille">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../1_intro/" class="btn btn-neutral" title="Introduciton"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../1_intro/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../3_grille/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
