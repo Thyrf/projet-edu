@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Introduciton - Apprentissage autonome</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Introduciton";
+    var mkdocs_page_input_path = "GD/1_intro.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Apprentissage autonome</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Apprentissage numérique</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduciton</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../2_robot/">Robot tournesol</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../3_grille/">Recherche en grille</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../4_gradient/">Descente de gradient</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../5_lien/">Liens</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Apprentissage autonome</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Apprentissage numérique &raquo;</li>
+        
+      
+    
+    <li>Introduciton</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introduction-a-lapprentissage-numerique">Introduction à l'apprentissage numérique</h1>
+<p>Les nombreuses appliccations de l'intelligence artificielle sont souvent possibles grâce à des réseaux de neurones artificiels. L'une des premières utilisations des réseaux de neurones consistait à reconnaître les chiffres écrits à la main sur les enveloppes pour automatiser le tri postal. </p>
+<table>
+<thead>
+<tr>
+<th align="center">Réseau de neurone</th>
+<th align="center">Un neurone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="../intro/ANN.png" /></td>
+<td align="center"><img alt="" src="../intro/Neuron.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure 1:</strong> Visualisation d'un réseau de neurones pour reconnaitre des chiffres. </p>
+</div>
+<p>L'image du chiffre est décomposée en 28 x 28 = 784 pixels en niveaux de gris. Chaque pixel est représenté sur 8 bits (valeurs allant de 0 à 255 inclus). Ces 784 valeurs sont données comme <strong>entrée</strong> du réseau de neurones. Des calculs composés de successions de sommes pondérées et de fonction non-linéaires (ou fonction d'activation) telles que des <a href="https://fr.wikipedia.org/wiki/Sigmo%C3%AFde_(math%C3%A9matiques)">sigmoides</a> sont appliqués à ces 784 valeurs afin d'obtenir dix nombres en <strong>sortie</strong>. </p>
+<p>L'objectif est que ces dix nombres en sortie représentent la probabilité qu'une image corresponde au chiffre 0, 1, 2, etc... jusqu'au chiffre 9. Cependant cela ne sera le cas que pour certaines valeurs de poids <span class="arithmatex">\(w\)</span> utilisés dans les sommes pondérées. Faire apprendre le réseau de neurone consistera à ajuster ces poids pour que l'objectif soit atteint. Les détails mathématiques du réseau de neurones mis de côté, son apprentissage peut être considéré comme l'ajustement de paramètres pour satisfaire un objectif.</p>
+<p><img alt="" src="../intro/Knobs.png" /></p>
+<div class="admonition note">
+<p><strong>Figure 2:</strong> L'apprentissage consiste à modifier les paramètres de façon à ce que la sortie corresponde à ce que nous désirons. On met un <em>4</em> en entrée et on change les paramètres jusqu'à ce que la probabilité <em>P(4)</em> soit supérieure aux autres, etc... </p>
+</div>
+<p>En partant d'un problème de robotique, cette séquence permettra de découvrir le mécanisme qui permet d'ajuster ces paramètres de manière automatique, c'est-à-dire de créer un apprentissage de façon numérique.</p>
+<p>(Pré-requis) Pour suivre cette séquence, vous aurez besoin de savoir manipuler des listes dans un langage visuel ou texte (makecode ou python). </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../2_robot/" class="btn btn-neutral float-right" title="Robot tournesol">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../2_robot/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

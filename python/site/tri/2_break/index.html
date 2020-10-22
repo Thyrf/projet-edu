@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Break & Continue - Programmer en python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Break & Continue";
+    var mkdocs_page_input_path = "tri/2_break.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programmer en python</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Découverte</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/1_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/2_instructions/">Instructions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/3_variables/">Variables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/4_boucles/">Boucles</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/5_fonctions/">Fonctions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/6_conditions/">Conditions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/7_listes/">Listes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/8_conclusion/">Conclusion</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Les algorithmes de tri</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../1_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Break & Continue</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../3_variables/">Variables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../4_modules/">Modules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../5_librairies/">Librairies</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programmer en python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Les algorithmes de tri &raquo;</li>
+        
+      
+    
+    <li>Break & Continue</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="break-et-continue">Break et continue</h2>
+<p>Les déclarations <em>break</em> et <em>continue</em> permettent d'alterer le fonctionnement normal des boucles que vous avez découvert dans le chapitre précédent. Les boucles, comme nous l'avons vu, permettent de répéter un bloc d'instructions tant qu'un test défini avec la boucle est vérifié. Cependant il est parfois souhaité d'interférer avec ce fonctionnement depuis l'intérieur de la boucle, pour passer directement au bloc suivant (l'itération suivante), ou pour tout simplement arrêter la boucle. C'est exactement ce à quoi servent respectivement les déclarations <em>continue</em> et <em>break</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Tester le programme suivant et à travers ce que vous avez appris dans cette section, modifier le programme du tri à bulles afin qu'il marche après avoir remplacé la boucle principale par une boucle <em>while True:</em></p>
+</div>
+<pre><code class="language-py">for i in range(10):
+  if i == 5:
+    continue
+  print(i)
+
+i = 0
+while i &lt; 10:
+  print(i)
+  if i == 5:
+    break
+  i = i + 1
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../3_variables/" class="btn btn-neutral float-right" title="Variables">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../1_intro/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../1_intro/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../3_variables/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
