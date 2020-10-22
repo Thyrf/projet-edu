@@ -1,0 +1,27 @@
+site_name: Apprentissage autonome
+
+plugins: []
+
+theme: readthedocs
+
+extra_css:
+    - css/extra.css
+    
+markdown_extensions:
+- admonition
+- pymdownx.details #for the pull down markdown
+- pymdownx.arithmatex:
+    generic: true
+- footnotes
+
+nav:
+    - Introduction: index.md
+    - 'Apprentissage numérique':
+       - 'Introduciton': GD/1_intro.md
+       - 'Robot tournesol': GD/2_robot.md
+       - 'Recherche en grille': GD/3_grille.md
+       - 'Descente de gradient': GD/4_gradient.md
+       - 'Liens': GD/5_lien.md
+
+theme: readthedocs
+#theme: 'material'

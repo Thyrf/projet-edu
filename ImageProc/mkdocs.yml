@@ -1,0 +1,25 @@
+site_name: Apprentissage autonome
+
+plugins: []
+
+theme: readthedocs
+
+extra_css:
+    - css/extra.css
+    
+markdown_extensions:
+- admonition
+- pymdownx.details #for the pull down markdown
+- pymdownx.arithmatex:
+    generic: true
+- footnotes
+
+nav:
+    - Introduction: index.md
+    - Jupyter Notebook: jupyter.md
+    - Manipulation d'images: imageIntro.md
+    - test: test.html
+
+
+theme: readthedocs
+#theme: 'material'
