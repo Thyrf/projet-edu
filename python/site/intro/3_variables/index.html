@@ -48,7 +48,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Découverte</span></p>
+                <p class="caption"><span class="caption-text">Fibonacci: Découverte du langage</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../1_intro/">Introduction</a>
                     </li>
@@ -56,6 +56,12 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Variables</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#affectation-et-lecture">Affectation et lecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#affectation-et-lecture_1">Affectation et lecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#operations">Opérations</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../4_boucles/">Boucles</a>
@@ -64,22 +70,31 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../6_conditions/">Conditions</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../7_listes/">Listes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../7_recurrence/">Recurrence</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../8_conclusion/">Conclusion</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Les algorithmes de tri</span></p>
+                <p class="caption"><span class="caption-text">Tri: Aller plus loin</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/1_intro/">Introduction</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/2_break/">Break & Continue</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tri/3_variables/">Variables</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/3_variables/">Références aux variables</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/4_modules/">Modules</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/5_librairies/">Librairies</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Chiffrement: Connaître le langage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/1_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/2_chiffrement/">Chiffrement et déchiffrement</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/3_piratage/">Piratage</a>
                     </li>
                 </ul>
       </div>
@@ -103,7 +118,7 @@
     
       
         
-          <li>Découverte &raquo;</li>
+          <li>Fibonacci: Découverte du langage &raquo;</li>
         
       
     
@@ -119,68 +134,66 @@
             <div class="section">
               
                 <h2 id="variables-et-operations-standard">Variables et opérations standard</h2>
-<p>Les ordinateurs ne font pas que répéter les mêmes choses encore et encore. Ils nous sont utiles car ils peuvent s'adapter à différentes situation. Comment cela marche ? Grâce à des données qui sont collectées et fournies à l'ordinateur. Dans ons programmes, nous appelerons ces données des variables. Une variable est comme une boîte dans laquelle nous mettons des informations auquel notre programme peut accéder autant que nécessaire et changer le contenu.</p>
-<pre><code class="language-py"># A variable has a name. Lets call it x like you probably often do in mathematics. To give x a value, it's simple, just make it equal to something:
+<p>Les ordinateurs ne font pas que répéter les mêmes choses encore et encore. Ils nous sont utiles car ils peuvent s'adapter à différentes situation. Comment cela marche ? Grâce à des données qui sont collectées et fournies à l'ordinateur. Dans nos programmes, nous appelerons ces données des variables. Une variable est comme une boîte avec un nom dans laquelle nous mettons des informations auquel notre programme peut accéder autant que nécessaire et changer le contenu.</p>
+<h3 id="affectation-et-lecture">Affectation et lecture</h3>
+<p>Voici un programme qui démontre comment écrire dans une variable (l'affecter), et comment accéder à l'information qu'il y a dedans.</p>
+<pre><code class="language-py"># Une variable a un nom. Appelons-la x, comme vous le faites probablement souvent en mathématiques. Commençons par donner la valeur 0 à x:
 
 print(&quot;Assignement&quot;)
 x = 0
-
-# Now let's check what's inside x with the print function that we used in the previous section:
-
-print(&quot;x =&quot;)
+</code></pre>
+<p>Comme vous pouvez le voir, en informatique, <em>=</em> est un opérateur, qui calcul le résultat de ce qu'il y a à droite du <em>=</em> et le met dans la variable donée à gauche. Pour tester notre instruction et afficher la valeur de <em>x</em>, on peut utiliser la fonction print déjà utilisée précédemment:</p>
+<pre><code class="language-py">print(&quot;x =&quot;)
 print(x)
 
-# actually let's make this a bit more tidy and enjoy the capability of print to take several arguments
-
+# On pourra également afficher le résultat sur une seule ligne de cette manière:
 print(&quot;x = &quot;,x)
-
-# There exist different types of variables. During the summerschool we'll use mostly integers (numbers), floats(decimal numbers), strings (text), booleans (True of False) and lists (lists...)
-
-print(&quot;\nTypes&quot;)# \n = end of line
+</code></pre>
+<p>Ce qu'il faut reteninr, c'est que losrque la variable est à gauche du <em>=</em> on va écrire de l'information dedans, et l'on utilise une variable ailleurs, alors c'est souvent pour lire l'information contenue dedans.</p>
+<h3 id="affectation-et-lecture_1">Affectation et lecture</h3>
+<p>Il existe différents types de variables. Pendant l'école d'été, nous utiliserons surtout des nombres entiers (nombres), des nombres décimaux (nombres flottants), des chaînes de caractères (texte), des booléens (vrai ou faux) et des listes (listes...)</p>
+<pre><code class="language-py">print(&quot;\nTypes&quot;)# \n = end of line
 myInt = 2020
 myFloat = 3.14
 myString = &quot;Hello world&quot;
 myBoolean = True
 myList = [&quot;Kate&quot;,&quot;Joe&quot;, &quot;Ben&quot;, &quot;Shanka&quot;]
-
-print(myInt)
-print(myFloat)
+ &quot;Shanka&quot;]
+yFloat)
 print(myString)
 print(myBoolean)
 print(myList)
 
-# To display the type of a variable you can use the function type().
+# Pour afficher le type d'une variable, vous pouvez utiliser la fonction type().
 type(&quot;The type of myString is:&quot;)
 type(myString)
-
-# Each type comes with it's operations. As you could expect if I add two numbers and if I add two strings, the process will be very different. Let's try it out:
-
-print(&quot;\nOperations&quot;)
+</code></pre>
+<h3 id="operations">Opérations</h3>
+<p>Chaque type est accompagné de ses opérations. Comme vous pouvez vous en douter, si j'ajoute deux chiffres et deux chaînes de caractères, le processus sera très différent. Essayons :</p>
+<pre><code class="language-py">print(&quot;\nOperations&quot;)
 print(myInt + 1)
 print(myFloat / 2)
 print(myString + &quot; !!!&quot;)
 print(not(myBoolean))
 print(myList[3])
 
-# Note that you can use the value stored in a variable to assign another variable. And then you can end up with things a bit strange at first but super useful such as this:
+# Notez que vous pouvez utiliser la valeur stockée dans une variable pour en affecter une autre. Alors vous pouvez vous retrouver avec des choses un peu étranges au début mais super utiles comme celle-ci :
 
 print(&quot;\nOperations2&quot;)
 print(x)
 x = x + 1
 print(x)
 
-# One last thing. Can we add strings and integers ? What do you think ?
+# Une dernière chose. Peut-on ajouter des chaînes et des entiers ? Qu'en pensez-vous ?
 
 print(&quot;\nOperations3&quot;)
 myString = &quot;Year:&quot; + 2000
 print(&quot;myString&quot;)
-
-# This does not work and that is great ! Indeed adding a string and an integer is ambiguou. What do we want out of that is unclear. Do we want 2000 to be converted to a string and concatenated to &quot;Year&quot;, or do we want &quot;Year&quot; to be converted in ascii and added to 2000. The computer is not supposed to know and does not take the decision for us which is great. Instead he gives an error where it explains us why he has a problem with what we wrote. Pay attention to those errors and try to understand them, that's the best way to become independant and open yourself the world of computer science (and a big part of robotics).
-
 </code></pre>
+<p>La dernière instruction ne fonctionne pas et c'est très bien ainsi! En effet, l'ajout d'une chaîne et d'un entier est ambigu. Ce que nous voulons en tirer n'est pas clair. Voulons-nous que 2000 soit converti en une chaîne de caractères et concaténé à "Année", ou voulons-nous que "Année" soit converti en ascii et ajouté à 2000. L'ordinateur n'est pas censé savoir et ne prend pas la décision à notre place, ce qui est très bien. Au lieu de cela, il donne une erreur où il nous explique pourquoi il a un problème avec ce que nous avons écrit. Faites attention à ces erreurs et essayez de les comprendre, c'est la meilleure façon de devenir indépendant et de vous ouvrir au monde de l'informatique (et à une grande partie de la robotique).</p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
-<p>Modifiez le code, faites-le planter ! Définissez de nouvelles variables. Peut-on assigner du texte à une variable qui correspondant à un entier précédement ? Peut-on ajouter un entier à une chainge de caractère ? Testez et ainsi vous pourrez devenir autonome en vous familiarisant au message d'erreur que l'ordinateur vous donnera en cas de problème.</p>
+<p>Testez les exemples de programmes donnés. Modifiez les, et si une erreur se produit, prenez le temps de lire l'erreur affichée pour comprendre. Définissez de nouvelles variables. Peut-on assigner du texte à une variable qui correspondait à un entier précédement ? Peut-on ajouter un entier à une chainge de caractère ? Testez et ainsi vous pourrez devenir autonome en vous familiarisant aux messages d'erreur que l'ordinateur vous donnera en cas de problème.</p>
 </div>
               
             </div>

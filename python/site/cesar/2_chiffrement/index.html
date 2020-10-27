@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Introduction - Programmer en python</title>
+  <title>Chiffrement et déchiffrement - Programmer en python</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction";
-    var mkdocs_page_input_path = "tri/1_intro.md";
+    var mkdocs_page_name = "Chiffrement et d\u00e9chiffrement";
+    var mkdocs_page_input_path = "cesar/2_chiffrement.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -68,31 +68,27 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Tri: Aller plus loin</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#pre-requis">Pré-requis</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#le-tri-a-bulles">Le tri à bulles</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/1_intro/">Introduction</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../2_break/">Break & Continue</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/2_break/">Break & Continue</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../3_variables/">Références aux variables</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/3_variables/">Références aux variables</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../4_modules/">Modules</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/4_modules/">Modules</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../5_librairies/">Librairies</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/5_librairies/">Librairies</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Chiffrement: Connaître le langage</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/1_intro/">Introduction</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../1_intro/">Introduction</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/2_chiffrement/">Chiffrement et déchiffrement</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Chiffrement et déchiffrement</a>
+    <ul class="current">
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/3_piratage/">Piratage</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../3_piratage/">Piratage</a>
                     </li>
                 </ul>
       </div>
@@ -116,11 +112,11 @@
     
       
         
-          <li>Tri: Aller plus loin &raquo;</li>
+          <li>Chiffrement: Connaître le langage &raquo;</li>
         
       
     
-    <li>Introduction</li>
+    <li>Chiffrement et déchiffrement</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -131,36 +127,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="aller-plus-loin-avec-le-tri">Aller plus loin avec le tri</h1>
-<p>Dans ce chapitre nous allons découvrir certaines spécificités du langage python dans le contexte du tri de données. Pour réaliser la totalité des exercices de ce chapitre vous devrez avoir python3 d'installé sur votre machine ainsi que la librairie <em>matplotlib</em>.</p>
-<h2 id="pre-requis">Pré-requis</h2>
-<p>Avant de réaliser cette activité, il sera utile d'être en mesure de comprendre les algorithmes de tri. On pourrait par exemple travailler au préalable sur une activité débranchée avec des cartes à jouer pour découvrir les algorithmes standards tels que le tri à bulles, le tri par insertion et le tri par sélection. </p>
-<h2 id="le-tri-a-bulles">Le tri à bulles</h2>
-<p>L'un des algorithmes de tri le plus simple est le tri à bulles. Voici un programme en python qui montre son fonctionnement.  </p>
-<pre><code class="language-py">list_a_trier = [5,9,11,3,2,7,3,87,51,25,9,0]
-
-print(&quot;avant tri&quot;)
-print(list_a_trier)
-
-b_permut = True
-
-while b_permut == True:
-  b_permut = False
-
-  for index in range(0,len(list_a_trier)-1):
-    # check if in order
-    if list_a_trier[index]&gt;list_a_trier[index+1]:
-      buff = list_a_trier[index]
-      list_a_trier[index] = list_a_trier[index+1]
-      list_a_trier[index+1] = buff
-      b_permut = True
-
-print(&quot;après tri&quot;)
-print(list_a_trier)
-</code></pre>
+                <h2 id="chiffrement-et-dechiffrement">Chiffrement et déchiffrement</h2>
+<p>Pour chiffrer une chaîne de caractère en utilisant la stratégie de César, il va falloir décaler chaque caractère en utilisant une clef qui est une valeur entière. On pourra donc décomposer cette étape en deux: d'abord définir une fonction qui décale un caractère en utilisant une clef, et ensuite une fonction qui décale une chaine de caractère en utilisant une clef.</p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
-<p>Lire le programme du tri à bulles, comprendre son fonctionement et le tester.</p>
+<ul>
+<li>Sur papier, écrire une fonction <em>decaleCaractere(c,n)</em> qui prend comme arguments un caractère minuscule sans accent et un entier, et qui retourne le caractère décalé comme cela était expliqué dans la section précédente. On pourra utiliser pour cela les fonction <em>ord()</em> et <em>chr()</em> qui permettent repectivement de convertir un caractère en son nombre ascii correspondant et inversement. Tester pour cela <em>ord("a")</em>, <em>ord("b")</em>, <em>chr(ord("t"))</em>...</li>
+<li>Passer du papier à l'ordinateur, testez votre programme, et notez les éléments de langage que vous ne maitrisez pas encore. Est-ce que j'oublie de mettre le ":" à la fin de la ligne du "if"? Si oui, alors je l'écris clairement sur papier.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<ul>
+<li>En suivant la même méthode que dans l'exercice 1, écrire une fonction <em>decaleChaineCaractere(s,n)</em> qui chiffre (ou décale) une chaine de caractère composée seulement de minuscules sans accent.</li>
+<li>Le message "lsoxtyeofyeckfojdobwsxovohobmsmonoeh" est le résultat d'un chiffrement avec la clef 10. En utilisant la fonction <em>decaleChaineCaractere()</em> dechiffrer ce message.</li>
+</ul>
 </div>
               
             </div>
@@ -169,10 +150,10 @@ print(list_a_trier)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2_break/" class="btn btn-neutral float-right" title="Break & Continue">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../3_piratage/" class="btn btn-neutral float-right" title="Piratage">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../intro/8_conclusion/" class="btn btn-neutral" title="Conclusion"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../1_intro/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -190,17 +171,18 @@ print(list_a_trier)
         </div>
       </div>
 
-    </se     </div>
-div>
+    </section>
+
+  </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../intro/8_conclusion/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../1_intro/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../2_break/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../3_piratage/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

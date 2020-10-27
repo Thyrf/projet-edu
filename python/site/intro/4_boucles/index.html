@@ -48,7 +48,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Découverte</span></p>
+                <p class="caption"><span class="caption-text">Fibonacci: Découverte du langage</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../1_intro/">Introduction</a>
                     </li>
@@ -64,22 +64,31 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../6_conditions/">Conditions</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../7_listes/">Listes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../7_recurrence/">Recurrence</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../8_conclusion/">Conclusion</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Les algorithmes de tri</span></p>
+                <p class="caption"><span class="caption-text">Tri: Aller plus loin</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/1_intro/">Introduction</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/2_break/">Break & Continue</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tri/3_variables/">Variables</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/3_variables/">Références aux variables</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/4_modules/">Modules</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../tri/5_librairies/">Librairies</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Chiffrement: Connaître le langage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/1_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/2_chiffrement/">Chiffrement et déchiffrement</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cesar/3_piratage/">Piratage</a>
                     </li>
                 </ul>
       </div>
@@ -103,7 +112,7 @@
     
       
         
-          <li>Découverte &raquo;</li>
+          <li>Fibonacci: Découverte du langage &raquo;</li>
         
       
     
@@ -120,8 +129,8 @@
               
                 <h2 id="boucles">Boucles</h2>
 <p>Une autre façon dont les ordinateurs et les robots changent notre vie est dans leur capacité à faire face à des tâches répétitives sans s'ennuyer. Mais le programmeur qui les a programmés s'ennuie facilement, il doit donc disposer d'un outil pour s'occuper des répétitions dans son code. C'est à cela que servent les boucles.</p>
-<pre><code class="language-py"># Imagine I want to increment a variable x from 0 to 5 and show its value changing. I could write:
-print(&quot;No loop&quot;)
+<p>Imaginez que nous voulions incrémenter une variable x de 0 à 5 et montrer que sa valeur change. On pourra écrire :</p>
+<pre><code class="language-py">print(&quot;No loop&quot;)
 x = 0
 x = x + 1
 print(&quot;x = &quot;, x)
@@ -133,27 +142,22 @@ x = x + 1
 print(&quot;x = &quot;, x)
 x = x + 1
 print(&quot;x = &quot;, x)
-
-# But that is highly unreadable and unpractical. Therefore python and most other programming languages use loops. In python we'll use the for loop:
-
-print(&quot;\nFor loop&quot;)
+</code></pre>
+<p>Mais c'est très illisible et peu pratique. C'est pourquoi python et la plupart des autres langages de programmation utilisent des boucles. En python, nous utiliserons la boucle for :</p>
+<pre><code class="language-py">print(&quot;\nFor loop&quot;)
 x = 0
 for i in range(5):
   x = x + 1
   print(&quot;x = &quot;, x)
-
-# Note that the two previous bits of code give the same output. At first it can be fine to understand &quot;for i in range(5):...&quot; as &quot;repeat 5 times...&quot;, although it means a bit more than that.
-
-# Another thing to notice here is the use of indentations in python: the lines 20 and 21 start with a tabulation. This means that the two form a block, and this whole block will be repeated by the for loop in line 19.
-
-# Repetitions can also be handled by while loops. Which leads us to a third way to do the same thing: 
-print(&quot;\nWhile loop&quot;)
+</code></pre>
+<p>Notez que les deux bits de code précédents donnent le même résultat. Au début, on peut comprendre "pour i dans la plage(5) :..." comme "répéter 5 fois...", bien que cela signifie un peu plus que cela.</p>
+<p>Une autre chose à remarquer ici est l'utilisation d'indentations en python : les lignes 20 et 21 commencent par une tabulation. Cela signifie que les deux forment un bloc, et tout ce bloc sera répété par la boucle for de la ligne 19.</p>
+<p>Les répétitions peuvent également être gérées par les boucles <em>while</em>. Ce qui nous amène à une troisième façon de faire la même chose : </p>
+<pre><code class="language-py">print(&quot;\nWhile loop&quot;)
 x = 0
 while x &lt; 5:
   x = x + 1
   print(&quot;x = &quot;, x)
-
-
 </code></pre>
 <div class="admonition note">
 <p class="admonition-title">Exercice 3</p>

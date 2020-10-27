@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Intro - Programmer en python</title>
+  <title>Piratage - Programmer en python</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Intro";
-    var mkdocs_page_input_path = "tri/intro.md";
+    var mkdocs_page_name = "Piratage";
+    var mkdocs_page_input_path = "cesar/3_piratage.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -48,7 +48,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Découverte</span></p>
+                <p class="caption"><span class="caption-text">Fibonacci: Découverte du langage</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../intro/1_intro/">Introduction</a>
                     </li>
@@ -62,22 +62,33 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../intro/6_conditions/">Conditions</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../intro/7_listes/">Listes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/7_recurrence/">Recurrence</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../intro/8_conclusion/">Conclusion</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Les algorithmes de tri</span></p>
+                <p class="caption"><span class="caption-text">Tri: Aller plus loin</span></p>
                 <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/1_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/2_break/">Break & Continue</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/3_variables/">Références aux variables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/4_modules/">Modules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tri/5_librairies/">Librairies</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Chiffrement: Connaître le langage</span></p>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../1_intro/">Introduction</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../2_break/">Break & Continue</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../2_chiffrement/">Chiffrement et déchiffrement</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../3_variables/">Variables</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../4_modules/">Modules</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../5_librairies/">Librairies</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Piratage</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -100,8 +111,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Chiffrement: Connaître le langage &raquo;</li>
+        
+      
     
-    <li>Intro</li>
+    <li>Piratage</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -112,39 +127,35 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="aller-plus-loin-avec-le-tri">Aller plus loin avec le tri</h1>
-<p>Dans ce chapitre nous allons découvrir certaines spécificités du langage python dans le contexte du tri de données. Pour réaliser la totalité des exercices de ce chapitre vous devrez avoir python3 d'installé sur votre machine.</p>
-<h2 id="le-tri-a-bulles">Le tri à bulles</h2>
-<p>L'un des algorithmes de tri le plus simple est le tri à bulles. Voici un programme en python qui montre son fonctionnement.  </p>
-<pre><code class="language-py">list_a_trier = [5,9,11,3,2,7,3,87,51,25,9,0]
-
-print(&quot;avant tri&quot;)
-print(list_a_trier)
-
-b_permut = True
-
-while b_permut == True:
-  b_permut = False
-
-  for index in range(0,len(list_a_trier)-1):
-    # check if in order
-    if list_a_trier[index]&gt;list_a_trier[index+1]:
-      buff = list_a_trier[index]
-      list_a_trier[index] = list_a_trier[index+1]
-      list_a_trier[index+1] = buff
-      b_permut = True
-
-print(&quot;après tri&quot;)
-print(list_a_trier)
-</code></pre>
+                <h2 id="piratage">Piratage</h2>
+<p>Il nous est possible de chiffrer et déchiffrer un message en ayant connaissance de la clef, mais commment faire cela sans cette clef. Pour cela il va nous falloir de préférence une connaissance du langage utilisé dans la communication. Supposons que nous espionnons des francophones. Dans ce cas, un coup d'oeil au premier livre venu et nous pourrons observer que la lettre "e" est la plus fréquente en français. Ainsi, si nous sommes en possession d'un message chiffré par la méthode de César, il suffira souvent d'identifier la lettre la plus fréquente de ce message, et de décaler toutes les lettres afin que cette lettre soit transformée en "e".</p>
+<p>Pour le faire de manière informatique, on pourra le faire en deux étapes: d'abord nous calculerons le nombre d'occurrence de chaque lettre dans le message, puis nous identifierons laquelle de ces lettres est la plus fréquente.</p>
 <div class="admonition note">
-<p class="admonition-title">Exercice 1</p>
-<p>Lire le programme du tri à bulles, comprendre son fonctionement et le tester.</p>
+<p class="admonition-title">Exercice 3</p>
+<ul>
+<li>Sur papier, écrire une fonction <em>compteOccurrence(caractere, s)</em> qui prend comme arguments un caractère minuscule sans accent et une chaîne de caractères, et qui retourne combien de fois le caractère est présent dans cette chaîne. Ensuite seulement, tester votre fonction sur ordinateur. Exemple d'application: <em>compteOccurrence('c','compteOccurrence') =&gt; 4</em>.</li>
+<li>De même, définir et tester la fonction <em>histogrammeLettres(ma_chaine)</em> qui retourne une liste de 26 nombres correspondant au nombre de fois que chaque lettre de l'alphabet apparaît dans <em>ma_chaine</em>. Exemple: <em>histogrammeLettres('aaabbc') =&gt; [3,2,1,0,0,...,0]</em></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
+<p>Ecrire sur papier une fonction <em>idMaxVal(l)</em> qui prend pour argument une liste de nombres entiers et qui retourne l'index pour lequel l'élément de la liste a la valeur maximale. Tester votre définition de fonction sur ordinateur.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
+<p>A l'aide de la stratégie définie ci-dessus et les fonctions déjà fonctionnelles, trouvez avec quelle clef le message suivant a été chiffré et dechiffrez le: <em>mfljrmvqivljjzruvtyzwwivicvdvjjrxvszvemvelurejcvdfeuvuvcrtipgkfxirgyzvwvcztzkrkzfe</em></p>
 </div>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../2_chiffrement/" class="btn btn-neutral" title="Chiffrement et déchiffrement"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -167,6 +178,8 @@ print(list_a_trier)
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
+      
+        <span><a href="../2_chiffrement/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
