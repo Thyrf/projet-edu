@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>2 evenements - Programmation orientée objet</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "2 evenements";
+    var mkdocs_page_input_path = "pygame/2_evenements.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="https://info-edu.github.io/" class="icon icon-home">Programmation orientée objet</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../1_pygame">Créer une fenêtre</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href=".">Gestion des événements</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../3_balles">Les balles et les objets</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programmation orientée objet</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>2 evenements</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="gestion-des-evenements">Gestion des événements</h2>
+<p>Pour créer un jeu vidéo, il faut afficher ce que nous souhaitons, mais également percevoir les intentions de l'utilisation. Pour cela il est nécessaire de gérer les événements perçus par le clavier et/ou la souris. </p>
+<p>A la fin de cette section, votre programme permettra à l'utilisateur de contrôler la fusée grâce aux flèches comme le montre la vidéo ci-dessous.</p>
+<p><img alt="" src="../images/2_interaction.gif" /></p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<ul>
+<li>2.1. Modifier votre programme afin que l'utilisateur puisse faire bouger la fusée avec les flèches du clavier: à chaque fois que l'utilisateur presse sur la touche gauche, la fusée se déplace d'une case vers la gauche, pareil pour la droite...</li>
+<li>2.2. Il y a un problème: lorsque l'utilisateur garde une touche appuyée, la fusée ne continue pas de bouger. Modifier votre programme afin que si l'utilisateur garde une touche du clavier pressée alors la fusée continue de se déplacer dans la direction désirée. Arrangez vous pour que cela se fasse à 60 FPS.</li>
+<li>2.3. Pour l'instant la fusée ne se déplace pas dans la direction où elle pointe. Modifier votre programme afin que les flèches gauches et droite modifient sa direction et que les flèches haut et bas la fasse avancer et reculer dans la direction vers laquelle elle pointe.</li>
+<li>2.4. Comme nous sommes dans l'espace, lorsque nous appuyons sur l'accélérateur cela ne devrait pas faire changer notre position, mais notre vitesse. Modifier votre programe afin que les flèches haut et bas agissent sur la vitesse et non la position comme dans la vidéo ci-dessus.</li>
+</ul>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

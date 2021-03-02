@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>3 balles - Programmation orientée objet</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "3 balles";
+    var mkdocs_page_input_path = "pygame/3_balles.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="https://info-edu.github.io/" class="icon icon-home">Programmation orientée objet</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../1_pygame">Créer une fenêtre</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../2_evenements">Gestion des événements</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href=".">Les balles et les objets</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programmation orientée objet</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>3 balles</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="gestion-des-balles-programmation-orientee-objet">Gestion des balles - Programmation orientée objet</h2>
+<h3 id="creation-dune-balle">Création d'une balle</h3>
+<p>Notre premier objectif va être de permettre à notre utilisateur de tirer une balle en appuyant sur la touche espace. </p>
+<p><img alt="" src="../images/3_balle.gif" /></p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<ul>
+<li>3.1. Dessiner une balle sur l'écran à l'aide de la fonction <code>pygame.draw.circle()</code>.</li>
+<li>3.2. Modifier votre programme afin que la fusée tire une balle lorsque la touche espace est appuyée.</li>
+</ul>
+</div>
+<h3 id="creation-de-plusieurs-balles">Création de plusieurs balles</h3>
+<p>Notre programme nous permet à présent de créer une balle. Comment transformer notre programme pour créer plusieurs balles ? Si nous souhaitions avoir au maximum deux balles sur l'écran à un instant précis, nous pourrions (bien que je ne le recommanderais pas) faire un copier-coller. Mais dans un jeu comme astéroides, il ne nous faudra pas deux balles mais une dizaine voire plusieurs dizaines. Faire autant de copier-coller est simplement inimaginable. </p>
+<p>La solution ? Regrouper tout ce qui est propre à notre balle, et l'intégrer dans une seule entité qui nous permettra d'en faire autant de copies que nous souhaitons. On appelle cela un objet ou, en python, une classe. </p>
+<p>Alors que vous n'avez probablement pas encore défini d'objet, vous les avez déjà utilisé de plusieurs fois. Par exemple les <em>ndarray</em> de numpy sont des objets. Que nous permettent-il de faire ? De définir une entité multipliable avec pour chaque <strong>instance</strong> créée ses variables ou attributs et ses méthodes. Chaque image a sa propre taille (<em>shape</em>) et on peut appeller plusieurs fonctions (comme apr exemple la fonction <code>flip()</code>) pour chacune.</p>
+<h3 id="ecriture-dune-premiere-classe">Ecriture d'une première classe</h3>
+<p>Avant de créer une classe <code>Balle</code>, commençons par quelque chose de plus simple. Nous allons faire un nouveau programme pour tester les classes et les objets. Voici un programme qui permet de créer une classe <code>eleve</code>. </p>
+<pre><code class="language-py">class eleve:
+    # constructeur
+    def __init__(self, nom, age):
+        # attibuts instances
+        self.nom = nom
+        self.age = age
+
+    # une méthode
+    def se_presenter(self):
+        print(&quot;Je m'appelle&quot;,self.nom, &quot;et j'ai&quot;, self.age, &quot;ans&quot;)
+
+# création des instance     
+eleve1 = eleve(&quot;Nicolas&quot;,17)
+eleve2 = eleve(&quot;Carlos&quot;,16)
+
+# exécute une méthode des objets
+eleve1.se_presenter()
+eleve2.se_presenter()
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
+<ul>
+<li>4.1. Exécuter le programme ci-dessus.</li>
+<li>4.2. Modifier le pour ajouter un attribut <code>classe</code> qui permettra de savoir dans à quelle classe de son gymnase l'élève appartient.</li>
+<li>4.3. Modifier le programmme pour ajouter une méthode <code>ajouter_n_annees(n)</code> qui ajoute <code>n</code> années à l'élève.</li>
+</ul>
+</div>
+<h3 id="creer-des-balles-grace-a-un-objet">Créer des balles grâce à un objet</h3>
+<p>Avec ces nouvelles connaissances acquises, vous avez maintenant tous les outils pour transformer votre programme astéroides afin que la fusée de l'utilisateur puisse tirer autant de balle qu'il le souhaite comme dans la vidéo ci-dessous.</p>
+<p><img alt="" src="../images/4_balles.gif" /></p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 5</p>
+<ul>
+<li>5.1. Créer une classe <code>Balle</code>ayant pour attribut une position dans l'espace et un orientation.</li>
+<li>5.2. Ajouter une méthode <code>draw(screen)</code> qui permettra de dessiner la balle sur l'écran.</li>
+<li>5.3. Ajouter une méthode <code>update()</code> qui permettra de faire avancer la balle en fonction de son orientation. Tester votre programme en créant une balle au début de votre programme.</li>
+<li>5.4. Modifier votre programme afin qu'à chaque fois que le joueur appuie sur la touche espace, une balle est tirée. Pour cela on créera une liste (d'abord vide) de toutes les balles du jeu.</li>
+<li>5.5. Modifier votre programme afin de supprimer les balles qui sont sorties de l'écran.</li>
+</ul>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    < 
+pan>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
